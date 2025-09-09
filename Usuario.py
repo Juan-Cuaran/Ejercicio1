@@ -1,39 +1,39 @@
 class Usuario:
-
-    def __init__(self, Nombre:str, ID:str, Contraseña:str):
-        self._Nombre=Nombre
+    def __init__(self, Nombre: str, ID: str, Contraseña: str):
+        self._Nombre = Nombre
         self._ID = ID
-        self._Contraseña=Contraseña
+        self._Contraseña = Contraseña
         self._Estado_logueado = False
         
     @property
-    def get_Nombre (self): 
+    def get_Nombre(self): 
         return self._Nombre
     
     @property
-    def get_ID (self):
+    def get_ID(self):
         return self._ID
     
     @property
-    def get_Contraseña (self):
+    def get_Contraseña(self):
         return self._Contraseña
     
     @property
-    def logueado (self) -> bool:
+    def logueado(self) -> bool:
         return self._Estado_logueado
     
-    def Autenticacion (self, ID:str, Contraseña:str) ->bool:
-        if (self._ID == ID and self._Contraseña ==Contraseña):
-            self._logueado =True
-            print("Credenciales validas. Bienvenido: " + self._Nombre)
+    def Autenticacion(self, ID: str, Contraseña: str) -> bool:
+        if (self._ID == ID and self._Contraseña == Contraseña):
+            self._Estado_logueado = True  
+            print("Credenciales válidas. Bienvenido: " + self._Nombre)
             return True
         else:
-            self._logueado=False
-            print("Credenciales invalidas")
+            self._Estado_logueado = False  
+            print("Credenciales inválidas")
             return False
 
-    def Salir (self):
-        if (self._logueado ==True):
-            return f'El usuario {self._Nombre} ha cerrado sesion' 
+    def Salir(self):
+        if (self._Estado_logueado == True): 
+            self._Estado_logueado = False
+            return f'El usuario {self._Nombre} ha cerrado sesión' 
         else:
             return "Error, el usuario no estaba autenticado"
