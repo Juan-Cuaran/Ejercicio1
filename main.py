@@ -61,7 +61,7 @@ def main ():
                     print(df)
 
                     idx = int(input("Seleccione el indice del estudiante"))-1
-                    estudiante_seleccionado = estudiantes[idx]  # Corregido: usar objeto original        
+                    estudiante_seleccionado = estudiantes[idx]       
                     while True:
                             print("+------ Métodos Estudiante ------+")
                             print("1. Añadir curso")
